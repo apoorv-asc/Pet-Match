@@ -40,6 +40,7 @@ passport.deserializeUser(User.deserializeUser());
 //  FUNCTION
 // ===========
 function isLoggedIn(req,res,next){
+    // req.user contains the details about the user
     if(req.isAuthenticated()){
         return next();
     }
