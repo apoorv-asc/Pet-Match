@@ -49,16 +49,17 @@ function isLoggedIn(req,res,next){
     }
 };
 
-
-app.listen(27017,process.env.IP,function()
-{
-    console.log("Server has started");
-});
+// Write above thing first followed by the ↓ thing or else it won't pass updated info to ejs
 
 app.use(function(req,res,next){
     res.locals.user=req.user;
     next();
 })
+
+app.listen(27017,process.env.IP,function()
+{
+    console.log("Server has started");
+});
 
 // ================
 //     ROUTES
